@@ -3,7 +3,6 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.*;
 
-
 public class SortExercise
 {
 
@@ -41,11 +40,37 @@ public class SortExercise
         System.out.println("Your product is: " + productInt);
 
         // Smallest
-        System.out.println("Smallest is: " + Collections.min(numbersList));
-        
+        int smallest = numbersList.get(0);
+        for(int i = 0; i < numbersList.size(); ++i)
+        {
+            if(smallest > numbersList.get(i))
+            {
+                smallest = numbersList.get(i);
+            }
+        }
+        System.out.println("Smallest is: " + smallest);
+
+        // OR
+
+        // Uses java.util.* to call min function
+        System.out.println("Smallest using java.util library: " + Collections.min(numbersList));
+
         // Largest
-        System.out.println("Largest is: " + Collections.max(numbersList));
+        int largest = numbersList.get(0);
+        for(int i = 0; i < numbersList.size(); ++i)
+        {
+            if(largest < numbersList.get(i))
+            {
+                largest = numbersList.get(i);
+            }
+        }
+        System.out.println("Largest is: " + largest);
         
+        // OR
+
+        // Uses java.util.* to call max function
+        System.out.println("Largest using java.util library: " + Collections.max(numbersList));
+
     }
 
 }
